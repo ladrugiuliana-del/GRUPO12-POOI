@@ -6,15 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Simulador de préstamo con sistema de amortización ALEMÁN.
- *
- * En este sistema la amortización de CAPITAL es siempre la misma en
- * todas las cuotas (monto / cantidadCuotas). Lo que cambia es el
- * INTERÉS (porfavor no confundir enserio xd), que se calcula sobre el saldo que va quedando. Por eso el
- * importe de la cuota va bajando mes a mes (a diferencia del sistema
- * francés, donde la cuota es siempre igual).
- */
+
 public class SimuladorPrestamo {
 
     // Regla fija del banco: 60% de interés anual para todos los préstamos.
@@ -72,9 +64,8 @@ public class SimuladorPrestamo {
         return cuotas;
     }
 
-    /**
-     * Genera la tabla de amortización alemana.
-     */
+    // Genera la tabla de amortización alemana
+      
     public List<Cuota> generarCuotas() {
         cuotas.clear();
         double tasaMensual = TASA_INTERES_ANUAL / 12;
@@ -93,7 +84,7 @@ public class SimuladorPrestamo {
         return cuotas;
     }
 
-    /** a) Muestra importes de cada cuota con el formato pedido. */
+    //a) Muestra importes de cada cuota con el formato pedido.
     public void mostrarCuotas() {
         if (cuotas.isEmpty()) {
             generarCuotas();
@@ -112,7 +103,7 @@ public class SimuladorPrestamo {
         }
     }
 
-    /** b) Total pagado = suma de todos los importes de cuota. */
+    //b) Total pagado = suma de todos los importes de cuota.
     public double totalPagado() {
         if (cuotas.isEmpty()) {
             generarCuotas();
@@ -124,7 +115,7 @@ public class SimuladorPrestamo {
         return total;
     }
 
-    /** c) Total de intereses = suma de todos los intereses pagados. */
+    //c) Total de intereses = suma de todos los intereses pagados. 
     public double totalIntereses() {
         if (cuotas.isEmpty()) {
             generarCuotas();
@@ -140,7 +131,7 @@ public class SimuladorPrestamo {
         return fecha.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
-    /** Formatea con coma decimal y punto de miles mas que nada para evitar que se rompa el grafico xd */
+    // Formatea con coma decimal y punto de miles mas que nada para evitar que se rompa el grafico xd
     public static String formatearMoneda(double valor) {
         return String.format(Locale.forLanguageTag("es-AR"), "%,.2f", valor);
     }

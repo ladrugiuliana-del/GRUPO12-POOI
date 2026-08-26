@@ -19,7 +19,7 @@ public class PruebaSimulador {
 
 	    // e) Generar y mostrar importes
 	    System.out.println("PRÉSTAMO ORIGINAL =v");
-	    simulador.mostrarCuotas(); // Ya llama a generarCuotas() por dentro
+	    simulador.mostrarCuotas(); 
 
 	    // f) Mostrar total pagado
 	    System.out.println("Total pagado: " + SimuladorPrestamo.formatearMoneda(simulador.totalPagado()) + "$");
