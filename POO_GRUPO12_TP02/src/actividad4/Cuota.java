@@ -1,4 +1,4 @@
-package simulador;
+package actividad4;
 
 
 public class Cuota {

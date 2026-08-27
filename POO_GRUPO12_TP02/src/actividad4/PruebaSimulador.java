@@ -1,4 +1,4 @@
-package simulador;
+package actividad4;
 
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
