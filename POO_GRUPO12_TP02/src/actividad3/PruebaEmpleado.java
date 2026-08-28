@@ -1,4 +1,4 @@
-package Actividad3;
+package actividad3;
 
 import java.time.LocalDate;
 
